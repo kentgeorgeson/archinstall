@@ -8,9 +8,6 @@ ln -s /user/share/zoneinfo/US/Eastern /etc/localtime
 hwclock --systohc --localtime
 echo k2 > /etc/hostname
 systemctl enable dhcpcd.service
-pacman -S syslinux --noconfirm
-syslinux-install_update -i -a -m
-cp /boot/syslinux/syslinux.cfg /boot/syslinux/syslinux.bak
-nano /boot/syslinux/syslinux.cfg
-cat /boot/syslinux/syslinux.cfg | sed s/sda3/sda1/ > /boot/syslinux/syslinux.cfg
-
+pacman -S grub
+grub-install --target=i386-pc --recheck /dev/sda
+grub-mkconfig -o /boot/grub/grub.cfg
