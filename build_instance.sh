@@ -11,5 +11,6 @@ systemctl enable dhcpcd.service
 pacman -S syslinux --noconfirm
 syslinux-install_update -i -a -m
 cp /boot/syslinux/syslinux.cfg /boot/syslinux/syslinux.bak
-sed s/sda3/sda1/ /boot/syslinux/syslinux.cfg > /boot/syslinux/syslinux.cfg
+nano /boot/syslinux/syslinux.cfg
+cat /boot/syslinux/syslinux.cfg | sed s/sda3/sda1/ > /boot/syslinux/syslinux.cfg
 
