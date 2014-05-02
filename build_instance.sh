@@ -8,6 +8,6 @@ ln -s /user/share/zoneinfo/US/Eastern /etc/localtime
 hwclock --systohc --localtime
 echo k2 > /etc/hostname
 systemctl enable dhcpcd.service
-pacman -S grub
+pacman -S grub --noconfirm
 grub-install --target=i386-pc --recheck /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg

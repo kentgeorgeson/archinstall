@@ -6,7 +6,7 @@ export LANG=en_US.UTF-8
 systemctl start dhcpcd.service
 sgdisk --zap-all /dev/sda
 sfdisk /dev/sda << EOF
-0,768,,*
+20,768,,*
 ,,,
 ;
 ;
