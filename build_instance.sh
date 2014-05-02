@@ -8,9 +8,7 @@ ln -s /user/share/zoneinfo/US/Eastern /etc/localtime
 hwclock --systohc --localtime
 echo k2 > /etc/hostname
 systemctl enable dhcpcd.service
-pacman -S syslinux
-syslinux-intsall_update -i -a -m
-exit
+pacman -S syslinux --noconfirm
+syslinux-install_update -i -a -m
+nano /boot/syslinux/syslinux.cfg
 
-umount -R /mnt
-reboot
