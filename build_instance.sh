@@ -10,5 +10,6 @@ echo k2 > /etc/hostname
 systemctl enable dhcpcd.service
 pacman -S syslinux --noconfirm
 syslinux-install_update -i -a -m
-nano /boot/syslinux/syslinux.cfg
+cp /boot/syslinux/syslinux.cfg /boot/syslinux/syslinux.bak
+sed s/sda3/sda1/ /boot/syslinux/syslinux.cfg > /boot/syslinux/syslinux.cfg
 
